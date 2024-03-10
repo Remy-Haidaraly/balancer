@@ -1,0 +1,55 @@
+Haidaraly Rémy 4SI4 :
+
+Rustdocs : balancer\target\doc\balancer
+
+Réflexion :
+
+Au début, le projet m'a semblé intimidant... J'ai ressenti une certaine appréhension en me disant que je pourrais ne pas réussir. Toutefois, avec beaucoup de travail et d'efforts, je suis finalement satisfait du résultat obtenu. Bien sûr, il est loin d'être parfait. J'ai dû utiliser ChatGPT ainsi que d'autres ressources, mais l'essentiel est que j'ai pu comprendre le code, identifier mes erreurs et progresser. Ce projet a été un défi pour moi, notamment parce que j'ai travaillé dessus seul. J'avais envie de voir ce que je pouvais réaliser seul sur un projet de programmation.
+
+Ce projet m'a permis de mieux comprendre les concepts clés de Rust, tels que la gestion des threads, la portée des variables, les traits, etc.
+
+Il m'a également donné une meilleure compréhension du fonctionnement réel des outils comme les équilibreurs de charge, largement utilisés par des millions de serveurs aujourd'hui.
+
+Résumé du projet :
+
+Mon équilibreur de charge permet :
+- la redirection des requêtes clients vers un ou plusieurs serveurs disponibles.
+- de vérifier toutes les 3 secondes si un serveur est vivant ou non, et en fonction de cela, de rediriger le trafic vers les serveurs en vie.
+- d'informer l'utilisateur en temps réel de la disponibilité des serveurs.
+- l'utilisation de mécanismes de thread pour rendre le projet plus maniable et rapide.
+- la gestion d'erreurs dans le cas où un seul serveur est vivant, alors le client reçoit une erreur 502.
+- la gestion d'erreurs dans le choix du port à lier.
+- la création de journaux pour avoir un aperçu de ce qui s'est passé et vérifier que l'équilibreur de charge remplit bien sa fonction.
+- si deux serveurs sont vivants, le trafic est correctement redirigé. Si l'un des serveurs est arrêté, tout le trafic est dirigé vers le seul serveur en vie. Si un serveur est relancé (donc deux serveurs vivants), le trafic est à nouveau réparti entre tous les serveurs vivants.
+- le code est découpé en plusieurs fichiers pour une meilleure lisibilité.
+- l'ajout de rustdocs lorsque nécessaire pour mieux comprendre le code.
+- des fonctionnalités de couleur pour indiquer l'état des serveurs (actifs ou hors service) pour une meilleure visibilité.
+- la traduction du code de français en anglais.
+
+Bien qu'il reste encore beaucoup à faire sur mon projet, voici ce que je ferais avec plus de temps :
+
+- Approfondir la gestion des erreurs.
+- Ajouter un mécanisme de bannissement temporaire (avec une erreur 429) pour les clients qui envoient trop de requêtes dans un court laps de temps.
+- Ajouter des tests unitaires.
+- Rendre le projet plus modulaire.
+- Envisager l'utilisation de sockets plutôt que la bibliothèque actix_web (qui peut être assez limitée si l'on pousse le projet plus loin).
+- Implémenter une meilleure gestion des connexions pour gérer un grand nombre de requêtes simultanées de manière efficace.
+- Intégrer des mécanismes de surveillance pour suivre les performances de l'équilibreur de charge en temps réel.
+
+Voici les différentes ressources utilisées pour le projet :
+
+- https://actix.rs/
+
+- https://youtu.be/cICaUDqZ5t0
+
+- https://web.stanford.edu/class/cs110l/assignments/project-2-2022/
+
+- https://chat.openai.com/
+
+- https://testdriven.io/courses/http-load-balancer/concepts/
+
+- https://www.rust-lang.org/learn
+
+- https://stackoverflow.com/
+
+- https://www.youtube.com/
